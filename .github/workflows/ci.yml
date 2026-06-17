@@ -97,27 +97,22 @@ jobs:
 
       - name: Simular Deploy do service-users
         run: |
-          echo "🚀 Iniciando deploy do service-users..."
-          echo "📦 Empacotando aplicação..."
-          echo "✅ service-users deployado com sucesso!"
-          echo "URL: https://service-users-u6i9.onrender.com"
-
-      - name: Simular Deploy do service-tasks
-        run: |
-          echo "🚀 Iniciando deploy do service-tasks..."
-          echo "📦 Empacotando aplicação..."
-          echo "✅ service-tasks deployado com sucesso!"
-          echo "URL: https://service-tasks.onrender.com"
+          echo "Iniciando deploy do service-users..."
+          echo "Empacotando aplicação..."
+          echo "service-users deployado com sucesso!"
+          echo "URL: https://service-users-devops.onrender.com"
+          echo "service-tasks deployado com sucesso!"
+          echo "URL: https://service-tasks-devops.onrender.com"
 
       - name: Simular Deploy do frontend (Vercel)
         run: |
-          echo "🚀 Iniciando deploy do frontend no Vercel..."
-          echo "📦 Enviando arquivos estáticos..."
-          echo "✅ Frontend deployado com sucesso!"
-          echo "URL: https://devops-trabalho-tan.vercel.app"
+          echo "Iniciando deploy do frontend no Vercel..."
+          echo "Enviando arquivos estáticos..."
+          echo "Frontend deployado com sucesso!"
+          echo "URL: https://devops-tarefas.vercel.app"
 
       - name: Monitoramento pós-deploy
         run: |
-          echo "🔍 O monitoramento contínuo de uptime é feito pelo UptimeRobot,"
+          echo "O monitoramento contínuo de uptime é feito pelo UptimeRobot,"
           echo "    que verifica periodicamente se os serviços estão no ar."
-          echo "Pipeline concluída com sucesso 🎉"
+          echo "Pipeline concluída com sucesso "
