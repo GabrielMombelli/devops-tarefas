@@ -1,15 +1,14 @@
-# DevOps na Prática — Sistema de Tarefas
+# DevOps Tasks
 
-Projeto desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas (TADS) — UNIPAR.
-Demonstra os conceitos de DevOps vistos em aula aplicados em uma aplicação real, com deploy público.
+Sistema de gerenciamento de tarefas com frontend estático e dois microserviços Node.js.
 
 ---
 
-## Acesse o sistema no ar
+## URLs de produção
 
-- **Frontend:** https://devops-trabalho-tan.vercel.app
-- **service-tasks:** https://service-tasks.onrender.com
-- **service-users:** https://service-users-u6i9.onrender.com
+- **Frontend:** https://devops-tarefas.vercel.app
+- **service-tasks:** https://service-tasks-devops.onrender.com
+- **service-users:** https://service-users-devops.onrender.com
 
 > Os serviços no Render usam o plano free, então podem demorar ~30s para "acordar" na primeira requisição após um período de inatividade.
 
@@ -37,13 +36,13 @@ Demonstra os conceitos de DevOps vistos em aula aplicados em uma aplicação rea
 │  HTML / CSS / JS puro │
 └─────────────────────┘
 
-       ⬡ UptimeRobot monitora https://service-tasks.onrender.com,
-         https://service-users-u6i9.onrender.com e o frontend a cada poucos minutos
+       ⬡ UptimeRobot monitora https://service-tasks-devops.onrender.com,
+         https://service-users-devops.onrender.com e o frontend a cada poucos minutos
 ```
 
 ---
 
-## Conceitos de DevOps aplicados
+## Visão geral
 
 ### 1. CI/CD e Pipelines
 - **Pipeline** definida em `.github/workflows/ci.yml`
@@ -100,8 +99,8 @@ Todos os eventos são registrados com nível de severidade:
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/GabrielMombelli/devops-trabalho.git
-cd devops-trabalho
+git clone https://github.com/GabrielMombelli/devops-tarefas.git
+cd devops-tarefas
 
 # 2. Instale as dependências de cada serviço
 cd service-users && npm install && cd ..
@@ -123,15 +122,15 @@ cd frontend && npx serve .
 
 ```bash
 # Listar tarefas
-curl https://service-tasks.onrender.com/tasks
+curl https://service-tasks-devops.onrender.com/tasks
 
 # Criar tarefa (valida se o userId existe no service-users)
-curl -X POST https://service-tasks.onrender.com/tasks \
+curl -X POST https://service-tasks-devops.onrender.com/tasks \
   -H "Content-Type: application/json" \
   -d '{"title": "Nova tarefa", "userId": 1}'
 
 # Criar usuário
-curl -X POST https://service-users-u6i9.onrender.com/users \
+curl -X POST https://service-users-devops.onrender.com/users \
   -H "Content-Type: application/json" \
   -d '{"name": "Maria", "email": "maria@email.com"}'
 ```
@@ -141,7 +140,7 @@ curl -X POST https://service-users-u6i9.onrender.com/users \
 ## Estrutura de arquivos
 
 ```
-devops-trabalho/
+devops-tarefas/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml              # Pipeline de CI/CD (GitHub Actions)

@@ -9,8 +9,6 @@ const logger = require("./logger");
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-// CORS
-// Permite que o frontend no Vercel acesse este serviço
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
