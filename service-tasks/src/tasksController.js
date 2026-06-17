@@ -1,7 +1,4 @@
-// Controller de Tarefas
-// Demonstra comunicação entre microserviços: tasks consulta o service-users
-// para validar se o usuário existe antes de criar uma tarefa
-
+// Controller de tarefas
 const axios = require("axios");
 const db = require("./database");
 const logger = require("./logger");
@@ -9,8 +6,6 @@ const logger = require("./logger");
 // URL do serviço de usuários (microserviço independente)
 const USERS_SERVICE_URL = process.env.USERS_SERVICE_URL || "http://localhost:3002";
 
-// Consulta o service-users para validar se o usuário existe
-// Propagamos o traceId para rastrear a requisição entre serviços
 async function fetchUser(userId, traceId) {
   try {
     logger.info("Consultando service-users", { userId, traceId });
